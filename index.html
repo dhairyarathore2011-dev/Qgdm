@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhairya Rathore | QGDM Theory</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body { 
+    color: #e0e0e0; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #000 url('bh-bg.jpg') center/cover fixed no-repeat;
+    background-attachment: fixed;
+    line-height: 1.6;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7); /* dark overlay so text is readable */
+    z-index: -1;
+  }
+  
+  header { 
+    text-align: center; padding: 120px 20px; 
+    background: linear-gradient(135deg, rgba(255,140,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    backdrop-filter: blur(5px);
+  }
+  h1 { 
+    font-size: 3.5em; margin: 0; 
+    color: #ff8c00;
+    text-shadow: 0 0 20px rgba(255,140,0,0.8); 
+  }
+  .subtitle { font-size: 1.3em; opacity: 0.9; margin-top: 10px; }
+  
+  .equation-container {
+    text-align: center; padding: 80px 20px;
+  }
+  .equation { 
+    color: #ff8c00; font-size: 1.4em; 
+    text-shadow: 0 0 10px rgba(255,140,0,0.9), 0 0 30px rgba(255,140,0,0.5);
+    animation: glow 3s ease-in-out infinite alternate;
+    max-width: 900px; margin: 0 auto;
+  }
+  @keyframes glow {
+    from { text-shadow: 0 0 10px rgba(255,140,0,0.9), 0 0 30px rgba(255,140,0,0.5); }
+    to { text-shadow: 0 0 20px rgba(255,140,0,1), 0 0 50px rgba(255,140,0,0.8); }
+  }
+  
+  .stats { display: flex; gap: 40px; justify-content: center; margin: 40px 0; flex-wrap: wrap; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 2.5em; font-weight: bold; color: #ff8c00; text-shadow: 0 0 10px rgba(255,140,0,0.5); }
+  
+  .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+  
+  .highlight { 
+    background: rgba(20,20,20,0.95); padding: 30px; border-radius: 12px; 
+    margin: 40px 0; border: 1px solid #ff8c00; backdrop-filter: blur(10px); 
+  }
+  
+  .paper { 
+    background: rgba(15,15,15,0.95); padding: 30px; margin: 25px 0; 
+    border-radius: 12px; border-left: 4px solid #ff8c00; 
+    backdrop-filter: blur(10px); transition: 0.3s;
+  }
+  .paper:hover { transform: translateX(10px); box-shadow: 0 0 25px rgba(255,140,0,0.3); }
+  .paper h3 { margin-top: 0; color: #ff8c00; font-size: 1.3em; }
+  .doi { color: #aaa; font-size: 0.9em; font-family: monospace; margin: 8px 0; }
+  
+  .btn { 
+    display: inline-block; padding: 12px 24px; background: #ff8c00; color: #000; 
+    text-decoration: none; border-radius: 6px; margin-top: 12px; font-weight: bold;
+    box-shadow: 0 0 15px rgba(255,140,0,0.5); transition: 0.2s;
+  }
+  .btn:hover { background: #ffa733; transform: scale(1.05); box-shadow: 0 0 25px rgba(255,140,0,0.8); }
+  
+  .watermark {
+    position: fixed; bottom: 10%; right: 5%; font-size: 5em; 
+    color: rgba(255,140,0,0.08); font-weight: bold; z-index: -1;
+  }
+  
+  footer { text-align: center; padding: 50px 20px; opacity: 0.7; }
+  code { background: #222; padding: 2px 6px; border-radius: 4px; color: #ffa733; }
+</style>
+</head>
+<body>
+
+<div class="watermark">D = 10^-123</div>
+
+<header>
+  <h1>Dhairya Rathore</h1>
+  <div class="subtitle">Independent Researcher | QGDM Theory</div>
+  <div class="subtitle">Age 17 | Agra, India</div>
+</header>
+
+<div class="equation-container">
+  <div class="equation">
+    $$ G_{\mu\nu} + \sqrt{g}\,G_{\mu\nu} = x\,\mu\,\Theta(M-M_c) \left[ \frac{\xi \cdot \rho_{matter} \cdot R^3}{\sqrt{2\pi}\left(1+\frac{1.2\times10^{20}}{R_s}\right)} \right]^2 \left(1 + \frac{Q^2}{M^2} + \frac{J_{\mu\nu}J^{\nu\alpha}}{M_\mu}\right) \lim_{d\to4} g_{\mu\nu} (D \cdot \hbar \cdot c) $$
+    <br>
+    $$ D = \frac{\text{Observed}}{\text{Planck}} = 10^{-123} $$
+  </div>
+</div>
+
+<div class="container">
+  
+  <div class="stats">
+    <div class="stat"><div class="stat-num">4</div><div>Papers</div></div>
+    <div class="stat"><div class="stat-num">D</div><div>New Constant</div></div>
+    <div class="stat"><div class="stat-num">180+</div><div>dBIC vs ΛCDM</div></div>
+    <div class="stat"><div class="stat-num">21</div><div>Lensing Images Fit</div></div>
+  </div>
+
+  <div class="highlight">
+    <h2>The QGDM Hypothesis</h2>
+    <p>One term added to Einstein's equations replaces Dark Matter, Dark Energy, and solves the Cosmological Constant problem.</p>
+    <p><b>Key Results:</b> * Explains Dark Matter origin * Matches ESA/NASA CIB at 760nm + 240nm * Predicts gravitational lensing anomalies * Unifies QM, GR & Electromagnetism</p>
+  </div>
+
+  <h2 style="color: #ff8c00; font-size: 2em; margin-bottom: 20px;">Publications</h2>
+
+  <div class="paper">
+    <h3>QGDM: Six Cluster-Scale Strong Lenses Require One 10^20 Msun Black Hole, Not Dark Matter Subhalos</h3>
+    <p>We test ΛCDM vs QGDM using 6 HST cluster strong lenses with 21 multiple images. A single UMBH model fits all data with χ²=1.03, BIC=21.09. An equivalent CDM model requires 33 parameters and is disfavored by dBIC>180.</p>
+    <div class="doi">DOI: 10.5281/zenodo.21320505 | Published: July 12, 2026</div>
+    <a href="https://doi.org/10.5281/zenodo.21320505" class="btn" target="_blank">View Paper + Code</a>
+  </div>
+
+  <div class="paper">
+    <h3>QGDM: Quantum Gravity Theory and Dark Matter Concentration Prediction</h3>
+    <p>Original formulation of QGDM. Introduces parameter D = 10^-123 to solve the cosmological constant problem and derive DM concentration profiles from first principles.</p>
+    <div class="doi">DOI: 10.5281/zenodo.21320504 | Published: July 9, 2026</div>
+    <a href="https://doi.org/10.5281/zenodo.21320504" class="btn" target="_blank">View Paper</a>
+  </div>
+
+  <div class="paper">
+    <h3>The prediction of Heaviside switch function in QGDMv1 and its match with observations</h3>
+    <p>Derivation of the D-term density dependence. Shows G_eff = G[1 + D/ρ] creates a Heaviside switch at low densities, matching galactic rotation curves without dark matter.</p>
+    <div class="doi">DOI: 10.5281/zenodo.21309353 | Published: July 11, 2026</div>
+    <a href="https://doi.org/10.5281/zenodo.21309353" class="btn" target="_blank">View Paper</a>
+  </div>
+
+  <div class="paper">
+    <h3>QGEM-BH: Quantum Gravity Entanglement of Masses - Black Hole</h3>
+    <p>Extension of QGDM to black hole horizons. Predicts deviations from GR near ρ→0 where the D-term dominates gravity.</p>
+    <div class="doi">DOI: 10.5281/zenodo.21285809 | Published: July 12, 2026</div>
+    <a href="https://doi.org/10.5281/zenodo.21285809" class="btn" target="_blank">View Paper</a>
+  </div>
+
+  <div class="paper">
+    <h3>Singularity 5D</h3>
+    <p>Extension of QGDM to 5D spacetime. Proposes singularity resolution through the D-term at Planck scales.</p>
+    <div class="doi">DOI: 10.5281/zenodo.21287647 | Published: July 10, 2026</div>
+    <a href="https://doi.org/10.5281/zenodo.21287647" class="btn" target="_blank">View Paper</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Dhairya Rathore | Contact: [dhairyaqgdm@gmail.com]
+</footer>
+
+<script>
+  // Parallax scroll for black hole
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    document.body.style.backgroundPositionY = -(scrolled * 0.3) + 'px';
+  });
+</script>
+
+</body>
+</html>
