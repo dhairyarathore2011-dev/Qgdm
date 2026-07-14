@@ -8,7 +8,45 @@
    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-  
+  <hr style="margin: 60px 0; border: 0; border-top: 2px solid #58a6ff;">
+<div style="padding: 25px; border: 1px solid #333; border-radius: 16px; background: #0a0a0a;">
+
+  <h2 style="margin-top: 0; color: #58a6ff;">Paper 5: QGDM v2.6 - Observational Tests</h2>
+  <p><b>DOI:</b> <a href="#" style="color: #58a6ff;">10.5281/zenodo.xxxxxxx</a> | <b>Status:</b> Published on Zenodo</p>
+  <p><b>Code:</b> Python, NumPy, Matplotlib | <b>Run on:</b> Pydroid3 - Android</p>
+  <p>I test the QGDM framework against key cosmological observations. All simulations and plots generated on mobile.</p>
+
+  <h3>Figure 1: Bullet Cluster - Real Data vs QGDM Predictions</h3>
+  <img src="fig1.png" style="width:100%; max-width:900px; border-radius:12px; margin: 10px 0;">
+  <p><i>Left: REAL Bullet Cluster. Red = Hot Gas, White = Galaxies. Center: QGDM Prediction if DM follows GALAXIES. Right: QGDM Prediction if DM follows GAS. Test shows QGDM can distinguish between mass tracers in cluster collisions.</i></p>
+
+  <h3>Figure 2: QGDM Simulation Input and Enhancement Field</h3>
+  <img src="fig2.png" style="width:100%; max-width:900px; border-radius:12px; margin: 10px 0;">
+  <p><i>Left: QGDM Input - Density field ρ/ρ_crit for a binary merger. Center: QGDM Enhancement Factor 1 + D*ρ/ρ_crit. Right: QGDM Predicted Flow Lines from the density peaks. Shows how QGDM modifies gravity in overdensities.</i></p>
+
+  <h3>Figure 3: QGDM Heaviside Engine vs Laniakea Supercluster</h3>
+  <img src="fig3.png" style="width:100%; max-width:900px; border-radius:12px; margin: 10px 0;">
+  <p><i>A: REAL DATA - Laniakea Flow Field from cosmic velocity surveys. B: VISIBLE MATTER - Galaxy + SMBH positions. C: QGDM PREDICTION - H(M_BH)*1/ρ. D: LCDM PREDICTION - ρ. QGDM anti-correlation matches the observed bulk flows better than LCDM.</i></p>
+
+  <h3>Figure 4: QGDM v2.6 Test Against Real Cosmic Web</h3>
+  <img src="fig4.png" style="width:100%; max-width:900px; border-radius:12px; margin: 10px 0;">
+  <p><i>A: REAL DATA - Laniakea Flow Field. B: VISIBLE MATTER INPUT - Galaxy Catalog. C: QGDM PREDICTION - Anti-Correlated 1/ρ field. D: LCDM PREDICTION - Correlated ρ field. QGDM v2.6 reproduces large-scale flow structure without free parameters.</i></p>
+
+  <h3>Figure 5: QGDM v2.6: Falsifiable Flow Test</h3>
+  <img src="fig5.png" style="width:100%; max-width:900px; border-radius:12px; margin: 10px 0;">
+  <p><i>A: REAL DATA - Galaxy Flow Field in Laniakea. B: VISIBLE MATTER INPUT - Galaxy Density ρ_gal. C: QGDM PREDICTION - 'DM' ∝ 1/ρ → Anti-Correlated. D: ΛCDM PREDICTION - DM ∝ ρ → Correlated. QGDM matches real flows while ΛCDM does not.</i></p>
+
+  <h3>Figure 6: QGDM: DM Scales with UMBH Mass</h3>
+  <img src="fig6.png" style="width:100%; max-width:900px; border-radius:12px; margin: 10px 0;">
+  <p><i>Rotation Velocity [km/s] vs Radius [kpc]. QGDM predicts DM content scales with Ultra-Massive Black Hole mass. Blue: DF2 - No UMBH, No DM. Orange: MW - Small DM. Green: M87 - Huge DM. Explains galaxy diversity without fine-tuning.</i></p>
+
+  <h3>Figure 7: QGDM v4 vs CDM - Statistical Comparison</h3>
+  <img src="fig7.png" style="width:100%; max-width:900px; border-radius:12px; margin: 10px 0;">
+  <p><i>N=31 REAL DATA POINTS from BASS_AGN, SPARC, and Monster galaxies. Y-axis: log(Dark Matter Halo Mass). X-axis: log(M_BH * Age). Red: QGDM v4 fit, slope=0.14. Blue dashed: CDM prediction, slope=1.00. ΔBIC = 32.9. Very strong statistical evidence favoring QGDM.</i></p>
+
+  <p style="margin-top: 30px;"><a href="#" style="color: #58a6ff;">Download PDF</a> | <a href="#" style="color: #58a6ff;">View Code on GitHub</a> | <a href="#" style="color: #58a6ff;">Cite as BibTeX</a></p>
+
+</div>
   body { 
     color: #e0e0e0; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
