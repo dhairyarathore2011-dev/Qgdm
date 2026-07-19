@@ -26,12 +26,12 @@
       color: #ff8c00;
       text-shadow: 0 0 20px rgba(255,140,0,0.8);
     }
- .subtitle { font-size: 1.3em; opacity: 0.9; margin-top: 10px; }
+.subtitle { font-size: 1.3em; opacity: 0.9; margin-top: 10px; }
 
- .equation-container {
+.equation-container {
       text-align: center; padding: 80px 20px;
     }
- .equation {
+.equation {
       color: #ff8c00; font-size: 1.4em;
       text-shadow: 0 0 10px rgba(255,140,0,0.9), 0 0 30px rgba(255,140,0,0.5);
       animation: glow 3s ease-in-out infinite alternate;
@@ -42,34 +42,34 @@
       to { text-shadow: 0 0 20px rgba(255,140,0,1), 0 0 50px rgba(255,140,0,0.8); }
     }
 
- .stats { display: flex; gap: 40px; justify-content: center; margin: 40px 0; flex-wrap: wrap; }
- .stat { text-align: center; }
- .stat-num { font-size: 2.5em; font-weight: bold; color: #ff8c00; text-shadow: 0 0 10px rgba(255,140,0,0.5); }
+.stats { display: flex; gap: 40px; justify-content: center; margin: 40px 0; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-num { font-size: 2.5em; font-weight: bold; color: #ff8c00; text-shadow: 0 0 10px rgba(255,140,0,0.5); }
 
- .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+.container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
 
- .highlight {
+.highlight {
       background: rgba(20,20,20,0.95); padding: 30px; border-radius: 12px;
       margin: 40px 0; border: 1px solid #ff8c00; backdrop-filter: blur(10px);
     }
 
- .paper {
+.paper {
       background: rgba(15,15,15,0.95); padding: 30px; margin: 25px 0;
       border-radius: 12px; border-left: 4px solid #ff8c00;
       backdrop-filter: blur(10px); transition: 0.3s;
     }
- .paper:hover { transform: translateX(10px); box-shadow: 0 0 25px rgba(255,140,0,0.3); }
- .paper h3 { margin-top: 0; color: #ff8c00; font-size: 1.3em; }
- .doi { color: #aaa; font-size: 0.9em; font-family: monospace; margin: 8px 0; }
+.paper:hover { transform: translateX(10px); box-shadow: 0 0 25px rgba(255,140,0,0.3); }
+.paper h3 { margin-top: 0; color: #ff8c00; font-size: 1.3em; }
+.doi { color: #aaa; font-size: 0.9em; font-family: monospace; margin: 8px 0; }
 
- .btn {
+.btn {
       display: inline-block; padding: 12px 24px; background: #ff8c00; color: #000;
       text-decoration: none; border-radius: 6px; margin-top: 12px; font-weight: bold;
       box-shadow: 0 0 15px rgba(255,140,0,0.5); transition: 0.2s;
     }
- .btn:hover { background: #ffa733; transform: scale(1.05); box-shadow: 0 0 25px rgba(255,140,0,0.8); }
+.btn:hover { background: #ffa733; transform: scale(1.05); box-shadow: 0 0 25px rgba(255,140,0,0.8); }
 
- .watermark {
+.watermark {
       position: fixed; bottom: 10%; right: 5%; font-size: 5em;
       color: rgba(255,140,0,0.08); font-weight: bold; z-index: -1;
     }
@@ -100,7 +100,7 @@
 <div class="container">
 
   <div class="stats">
-    <div class="stat"><div class="stat-num">5</div><div>Papers</div></div> <!-- CHANGED TO 5 -->
+    <div class="stat"><div class="stat-num">6</div><div>Papers</div></div> <!-- UPDATED TO 6 -->
     <div class="stat"><div class="stat-num">D</div><div>New Constant</div></div>
     <div class="stat"><div class="stat-num">180+</div><div>dBIC vs ΛCDM</div></div>
     <div class="stat"><div class="stat-num">21</div><div>Lensing Images Fit</div></div>
@@ -157,7 +157,15 @@
 
   <h2 style="color: #ff8c00; font-size: 2em; margin-bottom: 20px;">Publications</h2>
 
-  <!-- NEW PAPER 5 ADDED HERE -->
+  <!-- NEW PAPER 6 ADDED HERE -->
+  <div class="paper">
+    <h3>QGDM Effects on High-Mass Black Hole Mergers: Validation of Baseline Dynamics</h3>
+    <p>We test QGDM with Dhairya's constant $D = 1.38\times10^{-123}$ on a binary black hole merger with $M > 100\,M_\odot$ under an extreme magnetic field $F_u = 10^{13}\,\text{Tesla}$. Measurements at $t = \pm 1\,t_p$ show $\mathcal{G}_{\text{eff}}/\mathcal{G} = 1.000$x, confirming QGDM preserves baseline gravitational dynamics even in extreme regimes. D is derived as $D = \rho_{DM}/\rho_{Planck}$.</p>
+    <div class="doi">DOI: 10.5281/zenodo.21441762 | Published: April 27, 2026</div>
+    <a href="https://doi.org/10.5281/zenodo.21441762" class="btn" target="_blank">View Paper + Code</a>
+  </div>
+
+  <!-- PAPER 5 -->
   <div class="paper">
     <h3>QGDM: Explains Impossible Quasars at z>7 Without Dark Matter</h3>
     <p>We apply QGDM v6.6 to J0313-1806 at z=7.642 and TON618 at z=2.219. Using only measured B-fields and densities, QGDM predicts a 3.25x and 2.04x gravity boost respectively, solving the Salpeter time problem. CMB remains unchanged at 1.000x. No dark matter or super-Eddington accretion required.</p>
