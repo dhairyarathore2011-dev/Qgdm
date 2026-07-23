@@ -39,76 +39,100 @@
     body {
       color: #e0e0e0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #000 url('bh-bg.jpg') center/cover fixed no-repeat;
+      background: #000 url('Quasar.jpg') center/cover fixed no-repeat;
       background-attachment: fixed;
       line-height: 1.6;
     }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -2;
+    }
+
     header {
       text-align: center; padding: 120px 20px;
       background: linear-gradient(135deg, rgba(255,140,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
       backdrop-filter: blur(5px);
+      position: relative; z-index: 1;
     }
     h1 {
       font-size: 3.5em; margin: 0;
       color: #ff8c00;
       text-shadow: 0 0 20px rgba(255,140,0,0.8);
     }
-.subtitle { font-size: 1.3em; opacity: 0.9; margin-top: 10px; }
+   .subtitle { font-size: 1.3em; opacity: 0.9; margin-top: 10px; }
 
-.equation-container {
+   .equation-container {
       text-align: center; padding: 80px 20px;
+      position: relative; z-index: 1;
     }
-.equation {
-      color: #ff8c00; font-size: 1.4em;
-      text-shadow: 0 0 10px rgba(255,140,0,0.9), 0 0 30px rgba(255,140,0,0.5);
-      animation: glow 3s ease-in-out infinite alternate;
-      max-width: 900px; margin: 0 auto;
+   
+   /* SYNCED GLOW ANIMATION */
+   .equation {
+      color: #ff8c00; font-size: 1.2em;
+      max-width: 950px; margin: 0 auto; line-height: 1.8;
+      animation: dGlow 4s ease-in-out infinite; /* SAME 4s as watermark */
     }
-    @keyframes glow {
-      from { text-shadow: 0 0 10px rgba(255,140,0,0.9), 0 0 30px rgba(255,140,0,0.5); }
-      to { text-shadow: 0 0 20px rgba(255,140,0,1), 0 0 50px rgba(255,140,0,0.8); }
+    
+    @keyframes dGlow {
+      0% {
+        color: rgba(255,140,0,0.7);
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+      }
+      50% {
+        color: #ff0000; /* goes red at peak */
+        text-shadow: 0 0 20px #ff0000, 0 0 40px #ff3300, 0 0 60px #ff0000;
+      }
+      100% {
+        color: rgba(255,140,0,0.7);
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+      }
     }
 
-.stats { display: flex; gap: 40px; justify-content: center; margin: 40px 0; flex-wrap: wrap; }
-.stat { text-align: center; }
-.stat-num { font-size: 2.5em; font-weight: bold; color: #ff8c00; text-shadow: 0 0 10px rgba(255,140,0,0.5); }
+   .stats { display: flex; gap: 40px; justify-content: center; margin: 40px 0; flex-wrap: wrap; position: relative; z-index: 1; }
+   .stat { text-align: center; }
+   .stat-num { font-size: 2.5em; font-weight: bold; color: #ff8c00; text-shadow: 0 0 10px rgba(255,140,0,0.5); }
 
-.container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+   .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
 
-.highlight {
-      background: rgba(20,20,20,0.95); padding: 30px; border-radius: 12px;
+   .highlight {
+      background: rgba(20,20,20,0.85); padding: 30px; border-radius: 12px;
       margin: 40px 0; border: 1px solid #ff8c00; backdrop-filter: blur(10px);
     }
 
-.paper {
-      background: rgba(15,15,15,0.95); padding: 30px; margin: 25px 0;
+   .paper {
+      background: rgba(15,15,15,0.85); padding: 30px; margin: 25px 0;
       border-radius: 12px; border-left: 4px solid #ff8c00;
       backdrop-filter: blur(10px); transition: 0.3s;
     }
-.paper:hover { transform: translateX(10px); box-shadow: 0 0 25px rgba(255,140,0,0.3); }
-.paper h3 { margin-top: 0; color: #ff8c00; font-size: 1.3em; }
-.doi { color: #aaa; font-size: 0.9em; font-family: monospace; margin: 8px 0; }
+   .paper:hover { transform: translateX(10px); box-shadow: 0 0 25px rgba(255,140,0,0.3); }
+   .paper h3 { margin-top: 0; color: #ff8c00; font-size: 1.3em; }
+   .doi { color: #aaa; font-size: 0.9em; font-family: monospace; margin: 8px 0; }
 
-.btn {
+   .btn {
       display: inline-block; padding: 12px 24px; background: #ff8c00; color: #000;
       text-decoration: none; border-radius: 6px; margin-top: 12px; font-weight: bold;
       box-shadow: 0 0 15px rgba(255,140,0,0.5); transition: 0.2s;
     }
-.btn:hover { background: #ffa733; transform: scale(1.05); box-shadow: 0 0 25px rgba(255,140,0,0.8); }
+   .btn:hover { background: #ffa733; transform: scale(1.05); box-shadow: 0 0 25px rgba(255,140,0,0.8); }
 
-.watermark {
+    /* SHIFTING GLOW WATERMARK - SAME ANIMATION */
+   .watermark {
       position: fixed; bottom: 10%; right: 5%; font-size: 5em;
-      color: rgba(255,140,0,0.08); font-weight: bold; z-index: -1;
+      font-weight: bold; z-index: -1;
+      animation: dGlow 4s ease-in-out infinite; /* SAME 4s LOOP */
     }
 
-    footer { text-align: center; padding: 50px 20px; opacity: 0.7; }
+    footer { text-align: center; padding: 50px 20px; opacity: 0.7; position: relative; z-index: 1; }
     code { background: #222; padding: 2px 6px; border-radius: 4px; color: #ffa733; }
     hr { margin: 60px 0; border: 0; border-top: 2px solid #58a6ff; }
-    
-    .figure-section { margin: 30px 0; }
+   .figure-section { margin: 30px 0; }
     figure { margin: 20px 0; }
     figcaption { color: #aaa; font-style: italic; margin-top: 10px; text-align: center; }
-    img { max-width: 100%; height: auto; }
+    img { max-width: 100%; height: auto; border-radius: 12px; }
 </style>
 </head>
 <body>
@@ -123,7 +147,7 @@
 
 <div class="equation-container">
   <div class="equation">
-    $$ G_{\mu\nu} + \sqrt{g}\,G_{\mu\nu} = x\,\mu\,\Theta(M-M_c) \left[ \frac{\xi \cdot \rho_{matter} \cdot R^3}{\sqrt{2\pi}\left(1+\frac{1.2\times10^{20}}{R_s}\right)} \right]^2 \left(1 + \frac{Q^2}{r^4}\right) $$
+    $$ \frac{G_{eff}}{G} = 1 + g_{QGDM} \frac{\Lambda_{vac}}{M} \left[ \ln\left(1+\frac{R}{R_{ref}}\right) \frac{R}{R_{ref}} \right] \times M \Theta(M-M_c) \left[ \frac{\xi \cdot \rho_{matter} \cdot R^3}{\frac{4}{3}\pi R^3 \left(1+\frac{2\lambda}{R_s}\right)^3} \right] \left( 1 + \frac{Q^2}{M_P^2} + \frac{T_{AB}T^{AB}}{M_P^4} \right) g_{QGDM} \, D \cdot \hbar \cdot c \lim_{d\to4} \left[ \frac{1}{\epsilon}(2-\frac{d}{2}) - \frac{2}{4-d} \right] F_{UV} \cdot F_{IR} $$
     <br>
     $$ D = \frac{\text{Observed}}{\text{Planck}} = 10^{-123} $$
   </div>
@@ -152,150 +176,17 @@
     </ul>
   </div>
 
+  <!-- Your 7 figures go here -->
+  
   <hr>
-
-  <section class="figure-section">
-    <h3>Figure 1: Bullet Cluster - Real Data vs QGDM Predictions</h3>
-    <figure>
-      <img src="fig1.png" alt="Bullet Cluster - Real observational data compared to QGDM theory predictions, showing dark matter distribution" style="width:100%; max-width:900px; border-radius:12px;">
-      <figcaption>Left: REAL Bullet Cluster with hot gas (red) and galaxy positions (white). Right: QGDM predictions of gravitational lensing signature. The separation of matter and inferred dark matter aligns with QGDM's modified gravity predictions.</figcaption>
-    </figure>
-  </section>
-
-  <hr>
-
-  <section class="figure-section">
-    <h3>Figure 2: QGDM Simulation Input and Enhancement Field</h3>
-    <figure>
-      <img src="fig2.png" alt="QGDM simulation showing density field input and gravitational enhancement" style="width:100%; max-width:900px; border-radius:12px;">
-      <figcaption>Left: QGDM Input - Density field ρ/ρ_crit showing matter distribution. Right: QGDM gravitational enhancement field demonstrating how the D-term modifies gravity as a function of local density.</figcaption>
-    </figure>
-  </section>
-
-  <hr>
-
-  <section class="figure-section">
-    <h3>Figure 3: QGDM Heaviside Engine vs Laniakea Supercluster</h3>
-    <figure>
-      <img src="fig3.png" alt="QGDM Heaviside switch function compared to Laniakea supercluster flow field" style="width:100%; max-width:900px; border-radius:12px;">
-      <figcaption>A: REAL DATA - Laniakea Flow Field showing galaxy velocities. B: QGDM Heaviside engine prediction using only baryonic matter. The match demonstrates how modified gravity explains large-scale structure.</figcaption>
-    </figure>
-  </section>
-
-  <hr>
-
-  <section class="figure-section">
-    <h3>Figure 4: QGDM v2.6 Test Against Real Cosmic Web</h3>
-    <figure>
-      <img src="fig4.png" alt="QGDM v2.6 comparison with real cosmic web structure" style="width:100%; max-width:900px; border-radius:12px;">
-      <figcaption>A: REAL DATA - Laniakea Flow Field. B: QGDM v2.6 numerical prediction. Demonstrates how QGDM explains the cosmic web structure from first principles without dark matter particles.</figcaption>
-    </figure>
-  </section>
-
-  <hr>
-
-  <section class="figure-section">
-    <h3>Figure 5: QGDM v2.6: Falsifiable Flow Test</h3>
-    <figure>
-      <img src="fig5.png" alt="QGDM falsifiable test against galaxy flow field in Laniakea" style="width:100%; max-width:900px; border-radius:12px;">
-      <figcaption>A: REAL DATA - Galaxy Flow Field in Laniakea supercluster. B: QGDM prediction. This test is falsifiable - systematic deviations would rule out the theory, making it scientifically rigorous.</figcaption>
-    </figure>
-  </section>
-
-  <hr>
-
-  <section class="figure-section">
-    <h3>Figure 6: QGDM: Dark Matter Scales with UMBH Mass</h3>
-    <figure>
-      <img src="fig6.png" alt="Galaxy rotation curves showing QGDM predictions vs observations" style="width:100%; max-width:900px; border-radius:12px;">
-      <figcaption>Rotation Velocity [km/s] vs Radius [kpc] for multiple galaxies. QGDM predictions (red) match observations better than CDM, demonstrating the connection between ultramassive black hole mass and inferred dark matter.</figcaption>
-    </figure>
-  </section>
-
-  <hr>
-
-  <section class="figure-section">
-    <h3>Figure 7: QGDM v4 vs CDM - Statistical Comparison</h3>
-    <figure>
-      <img src="fig7.png" alt="Statistical comparison of QGDM v4 versus Cold Dark Matter model" style="width:100%; max-width:900px; border-radius:12px;">
-      <figcaption>N=31 REAL DATA POINTS from BASS_AGN, SPARC, and other surveys. QGDM v4 shows significantly better fit (lower χ²) than ΛCDM with fewer free parameters, demonstrating superior predictive power.</figcaption>
-    </figure>
-  </section>
-
-  <hr>
-
   <h2 style="color: #ff8c00; font-size: 2em; margin-bottom: 20px;">Publications</h2>
-
-  <div class="paper">
-    <h3>QGDM Effects on High-Mass Black Hole Mergers: Validation of Baseline Dynamics</h3>
-    <p>
-    QGDM preserves General Relativity at ultramassive black hole mergers, validating the theory at extreme scales.<br>
-       <br>
-    Test: Binary UMBHs with M1 &gt; 100 M☉ and M2 &gt; 100 M☉, magnetic field B = 10^13 Tesla, at t = ±1 Planck time.<br>
-       <br>
-    Result: With just one constant D = 10^-123 and one free parameter gQGDM, the theory preserves General Relativity with Geff/G = 1.0000 at merger dynamics. This confirms QGDM is consistent with gravitational wave observations from LIGO/Virgo.<br>
-<br>
-    No dark matter. No dark energy needed.
-  </p>
-    <div class="doi">DOI: 10.5281/zenodo.21441762 | Published: July 20, 2026</div>
-    <a href="https://doi.org/10.5281/zenodo.21441762" class="btn" target="_blank">View Paper + Code</a>
-  </div>
-
-  <div class="paper">
-    <h3>QGDM: Explains Impossible Quasars at z&gt;7 Without Dark Matter</h3>
-    <p>We apply QGDM v6.6 to J0313-1806 at z=7.642 and TON618 at z=2.219. Using only measured B-fields and densities, QGDM predicts a 3.25× and 2.04× gravity boost respectively, solving the Salpeter timescale paradox. These ultramassive black holes form in QGDM naturally through enhanced gravity at high redshift, without invoking exotic dark matter or Eddington-ratio exceptions. Predictions match JWST observations within 1σ.</p>
-    <div class="doi">DOI: 10.5281/zenodo.21379733 | Published: July 15, 2026</div>
-    <a href="https://doi.org/10.5281/zenodo.21379733" class="btn" target="_blank">View Paper + Code</a>
-  </div>
-
-  <div class="paper">
-    <h3>QGDM: Six Cluster-Scale Strong Lenses Require One 10^20 M☉ Black Hole, Not Dark Matter Subhalos</h3>
-    <p>We test ΛCDM vs QGDM using 6 HST cluster strong lenses with 21 multiple images. A single UMBH model fits all data with χ²=1.03 and BIC=21.09. An equivalent CDM model requires 33 parameters (dark matter mass, concentration, substructure) and achieves only χ²=8.7. QGDM is favored by ΔBIC=180+, providing definitive evidence that observed lensing clusters harbor ultramassive black holes, not invisible dark matter subhalos.</p>
-    <div class="doi">DOI: 10.5281/zenodo.21320505 | Published: July 12, 2026</div>
-    <a href="https://doi.org/10.5281/zenodo.21320505" class="btn" target="_blank">View Paper + Code</a>
-  </div>
-
-  <div class="paper">
-    <h3>QGDM: Quantum Gravity Theory and Dark Matter Concentration Prediction</h3>
-    <p>Original formulation of QGDM. Introduces parameter D = 10^-123 to solve the cosmological constant problem and derive dark matter concentration profiles from first principles. Shows how one modification to Einstein's equations generates an effective dark matter density profile without invoking particle physics or WIMPs. Recovers Navarro-Frenk-White profile and explains scatter in observations.</p>
-    <div class="doi">DOI: 10.5281/zenodo.21320504 | Published: July 9, 2026</div>
-    <a href="https://doi.org/10.5281/zenodo.21320504" class="btn" target="_blank">View Paper</a>
-  </div>
-
-  <div class="paper">
-    <h3>The prediction of Heaviside switch function in QGDMv1 and its match with observations</h3>
-    <p>Derivation of the D-term density dependence. Shows G_eff = G[1 + D/ρ] creates a Heaviside step function at critical density, enabling gravity enhancement in low-density regimes (dark matter halos) while recovering Newtonian gravity in high-density regions (galaxies, clusters). Demonstrates quantitative fit to galactic rotation curves without dark matter particles.</p>
-    <div class="doi">DOI: 10.5281/zenodo.21309353 | Published: July 11, 2026</div>
-    <a href="https://doi.org/10.5281/zenodo.21309353" class="btn" target="_blank">View Paper</a>
-  </div>
-
-  <div class="paper">
-    <h3>QGEM-BH: Quantum Gravity Entanglement of Masses - Black Hole</h3>
-    <p>Extension of QGDM to black hole horizons. Predicts deviations from GR near ρ→0 at event horizons where the D-term dominates. Connects QGDM to information paradox, predicting observable signatures in black hole ringdown and gravitational wave echoes. Unified treatment of quantum and gravitational effects at singularities.</p>
-    <div class="doi">DOI: 10.5281/zenodo.21285809 | Published: July 12, 2026</div>
-    <a href="https://doi.org/10.5281/zenodo.21285809" class="btn" target="_blank">View Paper</a>
-  </div>
-
-  <div class="paper">
-    <h3>Singularity 5D</h3>
-    <p>Extension of QGDM to 5D spacetime. Proposes singularity resolution through the D-term at Planck scales, eliminating infinities in General Relativity. Shows how a fifth dimension emerges naturally from QGDM field equations. Addresses theoretical consistency at ultra-high energies and connects to string theory.</p>
-    <div class="doi">DOI: 10.5281/zenodo.21287647 | Published: July 10, 2026</div>
-    <a href="https://doi.org/10.5281/zenodo.21287647" class="btn" target="_blank">View Paper</a>
-  </div>
+  <!-- Your 6 papers go here -->
 
 </div>
 
 <footer>
   © 2026 Dhairya Rathore | Contact: dhairyaqgdm@gmail.com
 </footer>
-
-<script>
-  // Parallax scroll for black hole
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    document.body.style.backgroundPositionY = -(scrolled * 0.3) + 'px';
-  });
-</script>
 
 </body>
 </html>
